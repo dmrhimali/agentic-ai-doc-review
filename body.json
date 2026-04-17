@@ -1,0 +1,7 @@
+﻿{
+  "job_type": "entity_extraction",
+  "criteria": {
+    "entity_types": ["person", "organization", "date", "amount"]
+  },
+  "document_directory": "./test-docs-ptsd"
+}

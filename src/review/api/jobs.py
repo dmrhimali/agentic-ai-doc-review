@@ -6,18 +6,18 @@ from fastapi import APIRouter, Depends, HTTPException, UploadFile
 from openai import APIError, AuthenticationError
 from sqlalchemy.orm import Session
 
-from ediscovery.database import get_db
-from ediscovery.schemas.document import (
+from review.database import get_db
+from review.schemas.document import (
     DocumentResponse,
     DocumentUploadResponse,
 )
-from ediscovery.schemas.job import (
+from review.schemas.job import (
     JobCreate,
     JobCreateFromDirectory,
     JobListResponse,
     JobResponse,
 )
-from ediscovery.services import document_service, job_service
+from review.services import document_service, job_service
 
 logger = logging.getLogger(__name__)
 

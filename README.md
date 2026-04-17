@@ -63,7 +63,7 @@ cp .env.example .env
 uv run python scripts/seed_prompts.py
 
 # 5. Start the API server
-uv run uvicorn ediscovery.main:app --reload
+uv run uvicorn review.main:app --reload
 ```
 
 Server runs at `http://localhost:8000`. API docs at `http://localhost:8000/docs`.
@@ -464,12 +464,12 @@ GROUP BY model_used;
 
 ## Adding a New Job Type
 
-1. Add env var overrides to `Settings` and a `ModelConfig` entry in `_build_model_configs()` in `src/ediscovery/config.py`
-2. Create `src/ediscovery/agents/<type>/worker.py`
+1. Add env var overrides to `Settings` and a `ModelConfig` entry in `_build_model_configs()` in `src/review/config.py`
+2. Create `src/review/agents/<type>/worker.py`
 3. Implement the `JobWorker` protocol (`process_document` + `quality_check`)
 4. Decorate with `@JobTypeRegistry.register("your_type")`
 5. Import the module in `main.py` to trigger registration
-6. Add the job type to the schema regex in `src/ediscovery/schemas/job.py`
+6. Add the job type to the schema regex in `src/review/schemas/job.py`
 7. Add prompt templates via `seed_prompts.py` or the API
 
 ## Development

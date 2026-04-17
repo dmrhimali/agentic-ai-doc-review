@@ -4,7 +4,7 @@ import logging
 
 from openai import AzureOpenAI, OpenAI
 
-from ediscovery.config import ModelConfig, settings
+from review.config import ModelConfig, settings
 
 logger = logging.getLogger(__name__)
 

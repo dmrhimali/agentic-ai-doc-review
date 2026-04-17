@@ -7,13 +7,13 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 
-import ediscovery.agents.entity_extraction  # noqa: F401
-import ediscovery.agents.relevancy  # noqa: F401
-from ediscovery.api.jobs import router as jobs_router
-from ediscovery.api.results import router as results_router
-from ediscovery.config import settings
-from ediscovery.database import engine
-from ediscovery.models.base import Base
+import review.agents.entity_extraction  # noqa: F401
+import review.agents.relevancy  # noqa: F401
+from review.api.jobs import router as jobs_router
+from review.api.results import router as results_router
+from review.config import settings
+from review.database import engine
+from review.models.base import Base
 
 logging.basicConfig(
     level=getattr(logging, settings.log_level.upper()),

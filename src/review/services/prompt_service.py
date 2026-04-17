@@ -4,7 +4,7 @@ import logging
 
 from sqlalchemy.orm import Session
 
-from ediscovery.models.prompt import PromptTemplate
+from review.models.prompt import PromptTemplate
 
 logger = logging.getLogger(__name__)
 

@@ -8,23 +8,23 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
 from sqlalchemy.orm import Session
 
-from ediscovery.agents.entity_extraction.prompts import (
+from review.agents.entity_extraction.prompts import (
     DOCUMENT_PROMPT as ENTITY_DOCUMENT_PROMPT,
 )
-from ediscovery.agents.entity_extraction.prompts import (
+from review.agents.entity_extraction.prompts import (
     QUALITY_CHECK_PROMPT as ENTITY_QUALITY_CHECK_PROMPT,
 )
-from ediscovery.agents.entity_extraction.prompts import (
+from review.agents.entity_extraction.prompts import (
     SYSTEM_PROMPT as ENTITY_SYSTEM_PROMPT,
 )
-from ediscovery.agents.relevancy.prompts import (
+from review.agents.relevancy.prompts import (
     DOCUMENT_PROMPT,
     QUALITY_CHECK_PROMPT,
     SYSTEM_PROMPT,
 )
-from ediscovery.database import SessionLocal, engine
-from ediscovery.models.base import Base
-from ediscovery.models.prompt import PromptTemplate
+from review.database import SessionLocal, engine
+from review.models.base import Base
+from review.models.prompt import PromptTemplate
 
 SEED_PROMPTS = [
     {

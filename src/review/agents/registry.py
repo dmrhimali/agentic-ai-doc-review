@@ -4,8 +4,8 @@ import logging
 from collections.abc import Callable
 from typing import Any
 
-from ediscovery.agents.base import JobWorker
-from ediscovery.config import ModelConfig, get_model_config
+from review.agents.base import JobWorker
+from review.config import ModelConfig, get_model_config
 
 logger = logging.getLogger(__name__)
 

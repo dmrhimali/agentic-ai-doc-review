@@ -1,6 +1,6 @@
 """Entity extraction agent."""
 
-from ediscovery.agents.entity_extraction.worker import (
+from review.agents.entity_extraction.worker import (
     EntityExtractionWorker,
 )
 

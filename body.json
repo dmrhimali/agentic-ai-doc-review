@@ -1,7 +1,8 @@
 ﻿{
-  "job_type": "entity_extraction",
+  "job_type": "relevancy_review",
   "criteria": {
-    "entity_types": ["person", "organization", "date", "amount"]
+    "relevant": ["psychological intervention for PTSD in adults", "randomized trial or meta-analysis of PTSD therapy", "trauma-focused CBT, EMDR, prolonged exposure, or CPT"],
+    "not_relevant": ["studies of other conditions (diabetes, asthma, anxiety without PTSD focus)", "methodology or simulation papers", "editorials, opinion pieces, or policy commentary"]
   },
   "document_directory": "./test-docs-ptsd"
 }

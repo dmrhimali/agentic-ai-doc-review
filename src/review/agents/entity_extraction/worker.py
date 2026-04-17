@@ -6,16 +6,16 @@ from typing import Any
 
 from openai import APIError
 
-from ediscovery.agents.base import QualityCheckResult, WorkerResult
-from ediscovery.agents.entity_extraction.prompts import (
+from review.agents.base import QualityCheckResult, WorkerResult
+from review.agents.entity_extraction.prompts import (
     DEFAULT_ENTITY_TYPES,
     DOCUMENT_PROMPT,
     QUALITY_CHECK_PROMPT,
     SYSTEM_PROMPT,
 )
-from ediscovery.agents.registry import JobTypeRegistry
-from ediscovery.config import ModelConfig
-from ediscovery.llm_client import create_llm_client
+from review.agents.registry import JobTypeRegistry
+from review.config import ModelConfig
+from review.llm_client import create_llm_client
 
 logger = logging.getLogger(__name__)
 

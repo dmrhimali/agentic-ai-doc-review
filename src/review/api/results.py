@@ -6,14 +6,14 @@ from typing import Any
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
-from ediscovery.database import get_db
-from ediscovery.schemas.result import (
+from review.database import get_db
+from review.schemas.result import (
     JobResultsResponse,
     PromptTemplateResponse,
     PromptUpdateRequest,
     ReviewResultResponse,
 )
-from ediscovery.services import job_service, prompt_service
+from review.services import job_service, prompt_service
 
 router = APIRouter(prefix="/api/v1", tags=["results"])
 

@@ -6,17 +6,17 @@ import logging
 
 from sqlalchemy.orm import Session
 
-from ediscovery.agents.base import (
+from review.agents.base import (
     JobWorker,
     OrchestratorContext,
     WorkerResult,
 )
-from ediscovery.agents.registry import JobTypeRegistry
-from ediscovery.config import get_model_config
-from ediscovery.extraction.extractor import extract_text
-from ediscovery.models.job import Job, JobDocument
-from ediscovery.models.prompt import PromptTemplate
-from ediscovery.models.result import ReviewResult
+from review.agents.registry import JobTypeRegistry
+from review.config import get_model_config
+from review.extraction.extractor import extract_text
+from review.models.job import Job, JobDocument
+from review.models.prompt import PromptTemplate
+from review.models.result import ReviewResult
 
 logger = logging.getLogger(__name__)
 

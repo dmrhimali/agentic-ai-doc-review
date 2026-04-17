@@ -5,10 +5,10 @@ import logging
 
 from sqlalchemy.orm import Session
 
-from ediscovery.agents.orchestrator import Orchestrator
-from ediscovery.models.job import Job
-from ediscovery.models.result import ReviewResult
-from ediscovery.services.document_service import load_documents_from_directory
+from review.agents.orchestrator import Orchestrator
+from review.models.job import Job
+from review.models.result import ReviewResult
+from review.services.document_service import load_documents_from_directory
 
 logger = logging.getLogger(__name__)
 

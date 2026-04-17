@@ -7,9 +7,9 @@ from pathlib import Path
 from fastapi import UploadFile
 from sqlalchemy.orm import Session
 
-from ediscovery.config import settings
-from ediscovery.extraction.extractor import SUPPORTED_EXTENSIONS
-from ediscovery.models.job import Job, JobDocument
+from review.config import settings
+from review.extraction.extractor import SUPPORTED_EXTENSIONS
+from review.models.job import Job, JobDocument
 
 logger = logging.getLogger(__name__)
 

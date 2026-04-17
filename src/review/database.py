@@ -5,7 +5,7 @@ from collections.abc import Generator
 from sqlalchemy import Engine, create_engine
 from sqlalchemy.orm import Session, sessionmaker
 
-from ediscovery.config import settings
+from review.config import settings
 
 engine: Engine = create_engine(
     settings.database_url,

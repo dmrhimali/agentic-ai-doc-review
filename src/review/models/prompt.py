@@ -5,7 +5,7 @@ import datetime
 from sqlalchemy import Boolean, DateTime, Integer, String, Text, UniqueConstraint
 from sqlalchemy.orm import Mapped, mapped_column
 
-from ediscovery.models.base import Base
+from review.models.base import Base
 
 
 class PromptTemplate(Base):

@@ -6,7 +6,7 @@ import uuid
 from sqlalchemy import DateTime, Enum, ForeignKey, Integer, String, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from ediscovery.models.base import Base
+from review.models.base import Base
 
 
 class Job(Base):

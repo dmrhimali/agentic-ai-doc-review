@@ -45,6 +45,7 @@ class Orchestrator:
         job = db.query(Job).filter(Job.id == job_id).first()
         if job is None:
             raise ValueError(f"Job not found: {job_id}")
+        # Guard against double-execution: pending → running is one-way.
         if job.status != "pending":
             raise ValueError(
                 f"Job {job_id} is in '{job.status}' state, "
@@ -143,6 +144,7 @@ class Orchestrator:
         db.commit()
 
         try:
+            # Cache extracted text on the row so re-runs skip the parse cost.
             if not doc.extracted_text:
                 doc.extracted_text = extract_text(doc.file_path)
                 db.commit()
@@ -164,6 +166,7 @@ class Orchestrator:
             if qc_result.is_approved:
                 final_result = result
             else:
+                # QC can reject without supplying a revision; keep original.
                 final_result = (
                     qc_result.revised_result
                     if qc_result.revised_result
@@ -192,6 +195,7 @@ class Orchestrator:
             db.commit()
 
         except Exception:
+            # Isolate per-doc failures — one bad doc shouldn't halt the batch.
             logger.exception(
                 "Failed to process document %s", doc.id
             )

@@ -194,9 +194,11 @@ class EntityExtractionWorker:
         ).format(
             entity_types=self._format_types(entity_types),
             initial_assessment=initial_assessment,
+            # Cap QC input to keep the second LLM call cheap on long docs.
             document_text=document_text[:5000],
         )
 
+        # QC always uses the fallback (stronger) model if configured.
         qc_model = self._config.fallback_model or self._model
         logger.info("Running quality check via %s", qc_model)
 

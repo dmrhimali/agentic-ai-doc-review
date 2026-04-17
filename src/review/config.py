@@ -32,6 +32,8 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",
+        # Tolerate env vars for job types not yet wired into code
+        # (e.g. PII_DETECT_*) instead of failing startup.
         extra="ignore",
     )
 
